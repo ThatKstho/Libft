@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strsubn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachim <othmanehachim@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/06 00:25:32 by ohachim           #+#    #+#             */
-/*   Updated: 2018/10/20 21:34:36 by ohachim          ###   ########.fr       */
+/*   Created: 2018/10/20 21:06:32 by ohachim           #+#    #+#             */
+/*   Updated: 2018/10/20 21:27:53 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strsubn(char *s, char c, char d)
 {
-	size_t	cn;
+	char	*sub;
+	size_t	len;
 
-	cn = 0;
-	if (n == 0)
+	if (s == NULL)
+		return (NULL);
+	while (*s != c)
+		s++;
+	if (*s == '\0')
+		return ("\0");
+	len = ft_strlenc(s, d);
+	if (!(sub = (char*)malloc(len + 1)))
 		return (0);
-	while (s1[cn] != '\0' && s2[cn] != '\0' && cn < n - 1)
+	while (*s != d && *s != '\0')
 	{
-		if (s2[cn] == s1[cn])
-			cn++;
-		else
-			return ((unsigned char)s1[cn] - (unsigned char)s2[cn]);
+		*sub = *s;
+		sub++;
+		s++;
 	}
-	return ((unsigned char)s1[cn] - (unsigned char)s2[cn]);
+	if (*s == d)
+		*sub = *s;
+	else
+		*sub = '\0';
+	return (sub);
 }

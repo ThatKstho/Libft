@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_dreplace.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohachim <othmanehachim@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/06 00:25:32 by ohachim           #+#    #+#             */
-/*   Updated: 2018/10/20 21:34:36 by ohachim          ###   ########.fr       */
+/*   Created: 2018/10/20 16:58:02 by ohachim           #+#    #+#             */
+/*   Updated: 2018/10/20 17:00:13 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_dreplace(const char *s, char tor, char r)
 {
+	char	*dups;
+	size_t	len;
 	size_t	cn;
 
 	cn = 0;
-	if (n == 0)
-		return (0);
-	while (s1[cn] != '\0' && s2[cn] != '\0' && cn < n - 1)
+	len = ft_strlen(s);
+	if (!(dups = (char*)malloc(len + 1)))
+		return (NULL);
+	while (s[cn] != '\0')
 	{
-		if (s2[cn] == s1[cn])
-			cn++;
+		if (s[cn] == tor)
+			dups[cn] = r;
 		else
-			return ((unsigned char)s1[cn] - (unsigned char)s2[cn]);
+			dups[cn] = s[cn];
+		cn++;
 	}
-	return ((unsigned char)s1[cn] - (unsigned char)s2[cn]);
+	dups[cn] = '\0';
+	return (dups);
 }
