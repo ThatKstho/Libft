@@ -6,7 +6,7 @@
 /*   By: ohachim <othmanehachim@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 23:28:13 by ohachim           #+#    #+#             */
-/*   Updated: 2018/10/21 16:27:40 by ohachim          ###   ########.fr       */
+/*   Updated: 2018/10/21 19:25:37 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,5 @@ size_t				ft_strlenc(const char *s, char c);
 char				*ft_dreplace(const char *s, char tor, char r);
 char				*ft_strsubn(char *s, char c, char d);
 char				*ft_craadd(char *s, char c);
+
 #endif
