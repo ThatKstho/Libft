@@ -6,7 +6,7 @@
 /*   By: ohachim <othmanehachim@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/13 15:54:28 by ohachim           #+#    #+#             */
-/*   Updated: 2018/10/20 21:01:44 by ohachim          ###   ########.fr       */
+/*   Updated: 2018/11/03 10:40:24 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	ft_countwords(char const *s, char c)
 	return (words);
 }
 
-static char	*ft_strcpyc(char *dst, const char *src, char c)
+char		*ft_strcpyc(char *dst, const char *src, char c)
 {
 	int	cn;
 
