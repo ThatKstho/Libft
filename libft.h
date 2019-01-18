@@ -13,8 +13,11 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# define BUFF_SIZE 20
+
 # include <unistd.h>
 # include <stdlib.h>
+# include <fcntl.h>
 
 typedef struct		s_list
 {
@@ -92,5 +95,6 @@ char				*ft_strsubn(char *s, char c, char d);
 char				*ft_craadd(char *s, char c);
 char				*ft_strcpyc(char *dst, const char *src, char c);
 char				*ft_strndup(char *src, char c);
+int					get_next_line(const int fd, char **line);
 
 #endif
