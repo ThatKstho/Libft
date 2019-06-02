@@ -96,5 +96,7 @@ char				*ft_craadd(char *s, char c);
 char				*ft_strcpyc(char *dst, const char *src, char c);
 char				*ft_strndup(char *src, char c);
 int					get_next_line(const int fd, char **line);
+int					ft_atoi_base(char *str, char *base);
+double				ft_frexp(double value, int *expo);
 
 #endif

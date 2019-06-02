@@ -6,7 +6,7 @@
 /*   By: ohachim <othmanehachim@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 21:35:49 by ohachim           #+#    #+#             */
-/*   Updated: 2018/11/07 21:36:41 by ohachim          ###   ########.fr       */
+/*   Updated: 2019/05/26 05:36:45 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strndup(char *src, char c)
 	len = 0;
 	while (src[len] != '\0' && src[len] != c)
 		len++;
-	if (!(dupn = (char*)malloc(len + 1)))
+	if ((!len && src[len] != c) || !(dupn = (char*)malloc(len + 1)))
 		return (NULL);
 	while (cn < len)
 	{
