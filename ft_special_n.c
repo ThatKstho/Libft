@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printfh.h"
+#include "libft.h"
 
 char	*ft_special_n(char **bi_fl, char fcm, int iexpo)
 {

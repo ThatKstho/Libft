@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printfh.h"
+#include "libft.h"
 
 char	*ft_make_s(int len, char fill)
 {

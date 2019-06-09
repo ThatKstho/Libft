@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printfh.h"
+#include "libft.h"
 
 static char	ft_decide(const char *format, t_rem *rems)
 {

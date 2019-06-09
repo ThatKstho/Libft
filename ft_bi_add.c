@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printfh.h"
+#include "libft.h"
 
 static void	ft_init_opsa(char **a1, char **a2, t_op *as)
 {

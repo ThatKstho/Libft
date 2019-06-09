@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printfh.h"
+#include "libft.h"
 
 static char	*ft_is_p_fw(t_rem *rems, char *num)
 {
