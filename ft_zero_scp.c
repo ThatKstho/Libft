@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_zero_scp.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohachim <othmanehachim@gmail.com>          +#+  +:+       +#+        */
+/*   By: ohachim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/05 21:57:53 by ohachim           #+#    #+#             */
-/*   Updated: 2019/05/26 05:37:27 by ohachim          ###   ########.fr       */
+/*   Created: 2019/05/24 21:15:31 by ohachim           #+#    #+#             */
+/*   Updated: 2019/05/26 07:09:39 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printfh.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_zero_scp(char **p_r)
 {
-	size_t	len;
+	char	*temp;
+	int		cn;
 
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	cn = 0;
+	while (p_r[0][cn] == '0' && p_r[0][cn + 1] != '.' && p_r[0][cn + 1] != '\0'
+			&& p_r[0][cn] != '\0')
+		cn++;
+	temp = ft_strdup(&p_r[0][cn]);
+	free(*p_r);
+	return (temp);
 }

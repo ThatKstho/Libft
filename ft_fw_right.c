@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_fw_right.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohachim <othmanehachim@gmail.com>          +#+  +:+       +#+        */
+/*   By: ohachim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/05 21:57:53 by ohachim           #+#    #+#             */
-/*   Updated: 2019/05/26 05:37:27 by ohachim          ###   ########.fr       */
+/*   Created: 2019/03/10 23:41:42 by ohachim           #+#    #+#             */
+/*   Updated: 2019/03/10 23:41:46 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printfh.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_fw_right(t_rem *rems, char *num)
 {
-	size_t	len;
+	char	*temp;
+	char	*padds;
+	int		len;
 
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	len = ft_strlen(num);
+	padds = ft_make_s(rems->fi_wi - len, ' ');
+	temp = num;
+	num = ft_strjoin(temp, padds);
+	free(padds);
+	free(temp);
+	return (num);
 }

@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_cstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohachim <othmanehachim@gmail.com>          +#+  +:+       +#+        */
+/*   By: ohachim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/05 21:57:53 by ohachim           #+#    #+#             */
-/*   Updated: 2019/05/26 05:37:27 by ohachim          ###   ########.fr       */
+/*   Created: 2019/04/26 18:47:13 by ohachim           #+#    #+#             */
+/*   Updated: 2019/05/26 05:43:12 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printfh.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_cstrlen(const char *str, char c)
 {
-	size_t	len;
+	int	cn;
+	int	len;
 
 	len = 0;
-	while (str[len] != '\0')
+	cn = 0;
+	while (str[cn] != '\0' && str[cn] != c)
+		cn++;
+	while (str[cn] != '\0')
+	{
 		len++;
+		cn++;
+	}
 	return (len);
 }

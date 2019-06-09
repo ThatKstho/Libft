@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_rem.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohachim <othmanehachim@gmail.com>          +#+  +:+       +#+        */
+/*   By: ohachim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/05 21:57:53 by ohachim           #+#    #+#             */
-/*   Updated: 2019/05/26 05:37:27 by ohachim          ###   ########.fr       */
+/*   Created: 2019/02/26 11:34:48 by ohachim           #+#    #+#             */
+/*   Updated: 2019/05/26 06:51:45 by ohachim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printfh.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_putchar_rem(char c, t_rem *rems)
 {
-	size_t	len;
-
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	ft_putchar(c);
+	rems->cursor += 1;
+	rems->counter += 1;
 }
